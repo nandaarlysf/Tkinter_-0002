@@ -19,3 +19,21 @@ mapel = ["Matematika", "Bahasa Indonesia", "Bahasa Inggris", "Fisika", "Kimia",
 frame = tk.Frame(top)
 frame.pack(pady=5)
 
+entri = []
+for i in range(10):
+    L = tk.Label(frame, text=mapel[i], anchor="w", width=18)
+    E = tk.Entry(frame, bd=3, width=10, justify="center")
+    L.grid(row=i, column=0, padx=5, pady=3)
+    E.grid(row=i, column=1, padx=5, pady=3)
+    entri.append(E)
+
+# 1 button
+B = tk.Button(top, text="Hasil Prediksi", command=hasilPrediksi,
+              bg="green", fg="white", width=15)
+B.pack(pady=15)
+
+# 1 label luaran hasil prediksi
+L_hasil = tk.Label(top, text="", font=("Arial", 14, "bold"), fg="blue")
+L_hasil.pack()
+
+top.mainloop()
